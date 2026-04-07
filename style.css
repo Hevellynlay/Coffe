@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+.bg-body-tertiary{
+    background:rgb(231, 189, 125) !important;
+}
+
+.nav-link{
+    color: rgb(143, 85, 15);
+}
+
+.nav-link:hover{
+    color: rgb(99, 65, 15);
+}
+
+h1{
+    text-align: center;
+    margin-top: 15px;
+    color: rgb(221, 167, 87);
+}
+.cards{
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.row{
+    display: flex;
+    align-items: center;
+    font-size: 22px;
+    color: rgb(182, 124, 53);
+}
+
+.T1{
+    font-family: "Playfair Display", serif;
+}
+
