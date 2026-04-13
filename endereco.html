@@ -1,42 +1,796 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=10">
-    <title>Utilizando BootStrap</title>
-    <!-- link do css do baotstrap-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <!--Css local-->
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Endereço — Grão Duarte</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+:root {
+      /* Paleta Monstro Burguer - Tema Marrom Rústico */
+      --green-dark:  #2B1B17; /* Marrom Café Extra Forte (Fundo principal) */
+      --green-mid:   #3D2B1F; /* Marrom Couro (Cards e Seções) */
+      --green-light: #8B4513; /* Marrom Sela (Destaques e Hovers) */
+      
+      --cream:       #EADDCA; /* Bege Amendoado (Texto principal) */
+      --cream-dark:  #C1A382; /* Bronze Suave (Texto secundário) */
+      
+      --gold:        #D2691E; /* Laranja Queimado/Canela (Preços e Chamadas) */
+      --gold-dark:   #5C4033; /* Marrom Escuro Profundo */
+      
+      --white:       #FDF5E6; /* Branco "Old Lace" (Para não cansar a vista) */
+      --text-dark:   #261A15;
+      --text-muted:  #8E735B;
+      --bg-light:    #1E1412; /* Fundo geral quase preto-amarronzado */
+      
+      --radius:      10px;    /* Meio termo entre o rústico e o moderno */
+    }
+
+    body {
+      font-family: 'Source Sans 3', sans-serif;
+      background-color: var(--bg-light);
+      color: var(--text-dark);
+      overflow-x: hidden;
+    }
+
+    /* ===== NAVBAR ===== */
+    #mainNav {
+      background-color: var(--green-dark);
+      padding: 0;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .navbar-brand-wrap {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+
+    .logo-circle {
+      width: 42px; height: 42px;
+      background-color: var(--cream);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .brand-main {
+      font-family: 'Lora', serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--cream);
+    }
+
+    .brand-sub {
+      display: block;
+      font-size: 0.6rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(242,237,215,0.5);
+    }
+
+    .nav-links-list {
+      display: flex;
+      gap: 2px;
+      list-style: none;
+    }
+
+    .nav-links-list a {
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(242,237,215,0.7);
+      text-decoration: none;
+      padding: 8px 16px;
+      border-radius: 50px;
+      transition: all 0.2s;
+    }
+
+    .nav-links-list a:hover,
+    .nav-links-list a.active {
+      color: var(--cream);
+      background: rgba(242,237,215,0.12);
+    }
+
+    /* ===== HERO ===== */
+    .page-hero {
+      background-color: var(--green-dark);
+      padding: 72px 0 64px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 60% 80% at 50% 50%, rgba(203,162,88,0.07) 0%, transparent 70%);
+    }
+
+    .page-hero-content { position: relative; z-index: 2; }
+
+    .page-hero-eyebrow {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 14px;
+    }
+
+    .page-hero-title {
+      font-family: 'Lora', serif;
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      font-weight: 700;
+      color: var(--cream);
+      margin-bottom: 16px;
+    }
+
+    .page-hero-title em {
+      font-style: italic;
+      color: var(--gold);
+    }
+
+    .page-hero-sub {
+      font-size: 1rem;
+      font-weight: 300;
+      color: rgba(242,237,215,0.6);
+      max-width: 400px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    /* ===== MAIN CONTENT ===== */
+    .content-wrapper {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 72px 24px 80px;
+    }
+
+    .content-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: start;
+    }
+
+    /* ===== MAP ===== */
+    .map-block {
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: 0 12px 40px rgba(30,57,50,0.12);
+      border: 1px solid rgba(30,57,50,0.08);
+      position: sticky;
+      top: 100px;
+    }
+
+    .map-block iframe {
+      display: block;
+      width: 100%;
+      height: 480px;
+      border: none;
+    }
+
+    .map-footer {
+      background: var(--white);
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid rgba(30,57,50,0.07);
+    }
+
+    .map-footer-text {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      font-weight: 400;
+    }
+
+    .map-footer-text strong {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      margin-bottom: 2px;
+    }
+
+    .btn-directions {
+      background-color: var(--green-dark);
+      color: var(--cream);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 10px 18px;
+      border-radius: 50px;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: all 0.25s;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .btn-directions:hover {
+      background-color: var(--green-mid);
+      color: var(--cream);
+      transform: translateY(-1px);
+    }
+
+    /* ===== INFO CARDS ===== */
+    .info-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .info-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 28px 28px 28px 28px;
+      border: 1px solid rgba(30,57,50,0.07);
+      transition: box-shadow 0.25s;
+    }
+
+    .info-card:hover {
+      box-shadow: 0 8px 28px rgba(30,57,50,0.09);
+    }
+
+    .info-card-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 18px;
+    }
+
+    .info-card-icon {
+      width: 44px; height: 44px;
+      background-color: rgba(30,57,50,0.07);
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.3rem;
+      flex-shrink: 0;
+    }
+
+    .info-card-title {
+      font-family: 'Lora', serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text-dark);
+    }
+
+    /* ENDEREÇO */
+    .address-line {
+      font-size: 1rem;
+      font-weight: 400;
+      color: var(--text-dark);
+      line-height: 1.6;
+      margin-bottom: 4px;
+    }
+
+    .address-city {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-top: 8px;
+    }
+
+    /* HORÁRIOS */
+    .hours-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .hours-table tr {
+      border-bottom: 1px solid rgba(30,57,50,0.06);
+    }
+
+    .hours-table tr:last-child { border-bottom: none; }
+
+    .hours-table td {
+      padding: 9px 0;
+      font-size: 0.9rem;
+    }
+
+    .hours-table .day {
+      color: var(--text-muted);
+      font-weight: 500;
+      width: 50%;
+    }
+
+    .hours-table .time {
+      color: var(--text-dark);
+      font-weight: 600;
+      text-align: right;
+    }
+
+    .hours-table .today .day,
+    .hours-table .today .time {
+      color: var(--green-mid);
+      font-weight: 700;
+    }
+
+    .open-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(45,106,79,0.1);
+      color: var(--green-mid);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 50px;
+      margin-bottom: 16px;
+    }
+
+    .open-badge::before {
+      content: '';
+      display: block;
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: var(--green-mid);
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50%       { opacity: 0.5; transform: scale(1.3); }
+    }
+
+    /* CONTATO */
+    .contact-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+      padding: 12px 14px;
+      border-radius: 10px;
+      transition: background 0.2s;
+    }
+
+    .contact-item:hover {
+      background: rgba(30,57,50,0.05);
+    }
+
+    .contact-item-icon {
+      width: 38px; height: 38px;
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+
+    .icon-whatsapp { background: #E8F8F0; }
+    .icon-phone    { background: rgba(30,57,50,0.07); }
+    .icon-email    { background: rgba(203,162,88,0.12); }
+    .icon-insta    { background: #FFF0F5; }
+
+    .contact-item-info strong {
+      display: block;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--text-dark);
+    }
+
+    .contact-item-info span {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    /* COMO CHEGAR */
+    .transport-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .transport-item {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+
+    .transport-icon {
+      font-size: 1.4rem;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .transport-info strong {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      margin-bottom: 3px;
+    }
+
+    .transport-info p {
+      font-size: 0.83rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    /* ===== STRIP / BANNER INFERIOR ===== */
+    .bottom-banner {
+      background-color: var(--green-dark);
+      padding: 56px 24px;
+      text-align: center;
+    }
+
+    .bottom-banner-eyebrow {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+
+    .bottom-banner-title {
+      font-family: 'Lora', serif;
+      font-size: clamp(1.7rem, 3.5vw, 2.6rem);
+      font-weight: 700;
+      color: var(--cream);
+      margin-bottom: 10px;
+    }
+
+    .bottom-banner-sub {
+      font-size: 0.93rem;
+      color: rgba(242,237,215,0.55);
+      margin-bottom: 32px;
+      font-weight: 300;
+    }
+
+    .btn-banner {
+      background-color: var(--cream);
+      color: var(--green-dark);
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 14px 34px;
+      border-radius: 50px;
+      border: none;
+      text-decoration: none;
+      display: inline-block;
+      transition: all 0.3s;
+    }
+
+    .btn-banner:hover {
+      background-color: var(--gold);
+      color: var(--white);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 24px rgba(0,0,0,0.3);
+    }
+
+    /* ===== FOOTER ===== */
+    .site-footer {
+      background-color: #141F1C;
+      border-top: 1px solid rgba(242,237,215,0.06);
+      padding: 44px 24px 28px;
+      text-align: center;
+    }
+
+    .footer-brand {
+      font-family: 'Lora', serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--gold);
+      margin: 8px 0 4px;
+    }
+
+    .footer-tagline {
+      font-size: 0.72rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(242,237,215,0.3);
+      margin-bottom: 20px;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .footer-links a {
+      color: rgba(242,237,215,0.5);
+      text-decoration: none;
+      font-size: 0.83rem;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: var(--gold); }
+    .footer-links span { color: rgba(242,237,215,0.2); }
+
+    .footer-copy {
+      font-size: 0.72rem;
+      color: rgba(242,237,215,0.2);
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 900px) {
+      .content-grid {
+        grid-template-columns: 1fr;
+      }
+      .map-block {
+        position: static;
+      }
+      .nav-links-list { display: none; }
+    }
+
+    /* ===== FADE IN ===== */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(18px);
+      animation: fadeUp 0.55s ease forwards;
+    }
+
+    .fade-up:nth-child(1) { animation-delay: 0.05s; }
+    .fade-up:nth-child(2) { animation-delay: 0.12s; }
+    .fade-up:nth-child(3) { animation-delay: 0.19s; }
+    .fade-up:nth-child(4) { animation-delay: 0.26s; }
+
+    @keyframes fadeUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+  </style>
 </head>
 <body>
-    
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#"><svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" fill="#A96424"><path d="M441.33-241.33q-116.33 0-198.83-80.5Q160-402.33 160-518v-255.33q0-27.67 19.5-47.17t47.17-19.5H746q55.33 0 94.67 38.33Q880-763.33 880-708q0 59.33-38.33 103.67Q803.33-560 746-560h-23.33v42q0 115.67-82.5 196.17-82.5 80.5-198.84 80.5ZM226.67-626.67H656v-146.66H226.67v146.66ZM441.33-308q88.34 0 151.5-60.83Q656-429.67 656-518v-42H226.67v42q0 88.33 63.16 149.17Q353-308 441.33-308Zm281.34-318.67H746q30.33 0 48.83-24.83t18.5-56.5q0-27.67-19.83-46.5T746-773.33h-23.33v146.66ZM160-120v-66.67h640V-120H160Zm281.33-440Z"/></svg></a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="index.html">Página Inicial</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="cardapio.html">Cardápio</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="endereco.html">Endereço</a>
-        </li>
+
+  <!-- NAVBAR -->
+  <nav id="mainNav">
+    <div class="nav-container">
+      <a class="navbar-brand-wrap" href="index.html">
+        <div class="logo-circle">
+          <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1E3932">
+            <path d="M441.33-241.33q-116.33 0-198.83-80.5Q160-402.33 160-518v-255.33q0-27.67 19.5-47.17t47.17-19.5H746q55.33 0 94.67 38.33Q880-763.33 880-708q0 59.33-38.33 103.67Q803.33-560 746-560h-23.33v42q0 115.67-82.5 196.17-82.5 80.5-198.84 80.5ZM226.67-626.67H656v-146.66H226.67v146.66ZM441.33-308q88.34 0 151.5-60.83Q656-429.67 656-518v-42H226.67v42q0 88.33 63.16 149.17Q353-308 441.33-308Zm281.34-318.67H746q30.33 0 48.83-24.83t18.5-56.5q0-27.67-19.83-46.5T746-773.33h-23.33v146.66ZM160-120v-66.67h640V-120H160Zm281.33-440Z"/>
+          </svg>
+        </div>
+        <div>
+          <div class="brand-main">Grão Duarte</div>
+          <span class="brand-sub">Cafeteria Artesanal</span>
+        </div>
+      </a>
+      <ul class="nav-links-list">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="cardapio.html">Cardápio</a></li>
+        <li><a href="endereco.html" class="active">Endereço</a></li>
       </ul>
     </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="page-hero">
+    <div class="page-hero-content">
+      <p class="page-hero-eyebrow">Venha nos visitar</p>
+      <h1 class="page-hero-title">Onde nos <em>Encontrar</em></h1>
+      <p class="page-hero-sub">Estamos esperando por você com café fresquinho e um lugar aconchegante.</p>
+    </div>
+  </section>
+
+  <!-- CONTEÚDO PRINCIPAL -->
+  <div class="content-wrapper">
+    <div class="content-grid">
+
+      <!-- MAPA -->
+      <div class="map-block">
+        <!-- Mapa fictício aponta para São Paulo centro, troque a src pelo seu endereço real -->
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.098787827348!2d-46.6565266!3d-23.5613768!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59c8da0aa315%3A0xd59f9431f2c9776a!2sAv.%20Paulista%2C%20S%C3%A3o%20Paulo%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1680000000000!5m2!1spt-BR!2sbr"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Mapa Grão Duarte">
+        </iframe>
+        <div class="map-footer">
+          <div class="map-footer-text">
+            <strong>Recanto Grão Duarte</strong>
+            Rua das Acácias, 142 — Vila Nova
+          </div>
+          <a href="https://maps.google.com" target="_blank" class="btn-directions">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+            Como Chegar
+          </a>
+        </div>
+      </div>
+
+      <!-- INFORMAÇÕES -->
+      <div class="info-stack">
+
+        <!-- ENDEREÇO -->
+        <div class="info-card fade-up">
+          <div class="info-card-header">
+            <div class="info-card-icon">📍</div>
+            <div class="info-card-title">Endereço</div>
+          </div>
+          <p class="address-line">Rua das Acácias, 142</p>
+          <p class="address-line">Vila Nova, Próximo à Praça Central</p>
+          <p class="address-city">São Paulo — SP &nbsp;·&nbsp; CEP 01310-100</p>
+        </div>
+
+        <!-- HORÁRIOS -->
+        <div class="info-card fade-up">
+          <div class="info-card-header">
+            <div class="info-card-icon">🕐</div>
+            <div class="info-card-title">Horário de Funcionamento</div>
+          </div>
+          <div class="open-badge">Aberto agora</div>
+          <table class="hours-table">
+            <tr class="today">
+              <td class="day">Segunda — Sexta</td>
+              <td class="time">07:00 — 20:00</td>
+            </tr>
+            <tr>
+              <td class="day">Sábado</td>
+              <td class="time">08:00 — 21:00</td>
+            </tr>
+            <tr>
+              <td class="day">Domingo</td>
+              <td class="time">09:00 — 18:00</td>
+            </tr>
+            <tr>
+              <td class="day">Feriados</td>
+              <td class="time">09:00 — 17:00</td>
+            </tr>
+          </table>
+        </div>
+
+        <!-- CONTATO -->
+        <div class="info-card fade-up">
+          <div class="info-card-header">
+            <div class="info-card-icon">📞</div>
+            <div class="info-card-title">Contato</div>
+          </div>
+          <div class="contact-list">
+            <a href="https://wa.me/5511999999999" target="_blank" class="contact-item">
+              <div class="contact-item-icon icon-whatsapp">💬</div>
+              <div class="contact-item-info">
+                <strong>(11) 99999-9999</strong>
+                <span>WhatsApp — resposta rápida</span>
+              </div>
+            </a>
+            <a href="tel:+551133334444" class="contact-item">
+              <div class="contact-item-icon icon-phone">📱</div>
+              <div class="contact-item-info">
+                <strong>(11) 3333-4444</strong>
+                <span>Telefone fixo</span>
+              </div>
+            </a>
+            <a href="mailto:contato@graoduarte.com.br" class="contact-item">
+              <div class="contact-item-icon icon-email">✉️</div>
+              <div class="contact-item-info">
+                <strong>contato@graoduarte.com.br</strong>
+                <span>E-mail — respondemos em até 24h</span>
+              </div>
+            </a>
+            <a href="https://instagram.com" target="_blank" class="contact-item">
+              <div class="contact-item-icon icon-insta">📸</div>
+              <div class="contact-item-info">
+                <strong>@graoduarte</strong>
+                <span>Instagram — siga nossas novidades</span>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- COMO CHEGAR -->
+        <div class="info-card fade-up">
+          <div class="info-card-header">
+            <div class="info-card-icon">🗺️</div>
+            <div class="info-card-title">Como Chegar</div>
+          </div>
+          <div class="transport-list">
+            <div class="transport-item">
+              <div class="transport-icon">🚇</div>
+              <div class="transport-info">
+                <strong>Metrô</strong>
+                <p>Estação Vila Nova (Linha 2 - Verde), saída B. Caminhe 5 minutos pela Rua das Acácias.</p>
+              </div>
+            </div>
+            <div class="transport-item">
+              <div class="transport-icon">🚌</div>
+              <div class="transport-info">
+                <strong>Ônibus</strong>
+                <p>Linhas 774M, 509A e 622P param na Rua das Acácias. Ponto a 50m da entrada.</p>
+              </div>
+            </div>
+            <div class="transport-item">
+              <div class="transport-icon">🚗</div>
+              <div class="transport-info">
+                <strong>Carro</strong>
+                <p>Estacionamento conveniado no Shopping Vila Nova a 100m. Valide o ticket na loja.</p>
+              </div>
+            </div>
+            <div class="transport-item">
+              <div class="transport-icon">🚲</div>
+              <div class="transport-info">
+                <strong>Bicicleta</strong>
+                <p>Bicicletário coberto e gratuito na calçada. Ponto de bicicleta compartilhada a 80m.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
   </div>
-</nav>
 
+  <!-- BANNER CTA -->
+  <div class="bottom-banner">
+    <p class="bottom-banner-eyebrow">Fique com a gente</p>
+    <h2 class="bottom-banner-title">Antes de vir, dá uma olhada<br>no nosso cardápio</h2>
+    <p class="bottom-banner-sub">Para você já saber o que vai pedir — ou se surpreender na hora.</p>
+    <a href="cardapio.html" class="btn-banner">Ver Cardápio</a>
+  </div>
 
-    <!-- Link do javaScript do Bootstrap-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>"
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <svg xmlns="http://www.w3.org/2000/svg" height="28px" viewBox="0 -960 960 960" width="28px" fill="#CBA258">
+      <path d="M441.33-241.33q-116.33 0-198.83-80.5Q160-402.33 160-518v-255.33q0-27.67 19.5-47.17t47.17-19.5H746q55.33 0 94.67 38.33Q880-763.33 880-708q0 59.33-38.33 103.67Q803.33-560 746-560h-23.33v42q0 115.67-82.5 196.17-82.5 80.5-198.84 80.5ZM226.67-626.67H656v-146.66H226.67v146.66ZM441.33-308q88.34 0 151.5-60.83Q656-429.67 656-518v-42H226.67v42q0 88.33 63.16 149.17Q353-308 441.33-308Zm281.34-318.67H746q30.33 0 48.83-24.83t18.5-56.5q0-27.67-19.83-46.5T746-773.33h-23.33v146.66ZM160-120v-66.67h640V-120H160Zm281.33-440Z"/>
+    </svg>
+    <p class="footer-brand">Recanto Grão Duarte</p>
+    <p class="footer-tagline">Cafeteria Artesanal · Cultivado com Amor</p>
+    <div class="footer-links">
+      <a href="index.html">Início</a>
+      <span>·</span>
+      <a href="cardapio.html">Cardápio</a>
+      <span>·</span>
+      <a href="endereco.html">Endereço</a>
+    </div>
+    <p class="footer-copy">© 2025 Recanto Grão Duarte. Todos os direitos reservados.</p>
+  </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+  <script>
+    // Marca o badge "Aberto agora" só nos horários corretos
+    const now = new Date();
+    const day = now.getDay(); // 0=dom, 1=seg...
+    const hour = now.getHours() + now.getMinutes() / 60;
+
+    let open = false;
+    if (day >= 1 && day <= 5) open = hour >= 7 && hour < 20;      // seg-sex
+    else if (day === 6)        open = hour >= 8 && hour < 21;      // sab
+    else if (day === 0)        open = hour >= 9 && hour < 18;      // dom
+
+    const badge = document.querySelector('.open-badge');
+    if (!open) {
+      badge.style.background = 'rgba(180,60,60,0.1)';
+      badge.style.color = '#B43C3C';
+      badge.innerHTML = '<span style="display:block;width:7px;height:7px;border-radius:50%;background:#B43C3C;flex-shrink:0"></span> Fechado no momento';
+    }
+  </script>
 
 </body>
 </html>

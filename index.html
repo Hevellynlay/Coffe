@@ -1,112 +1,205 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=10">
-    <title>Utilizando BootStrap</title>
-    <!-- link do css do baotstrap-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <!--Css local-->
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recanto Grão Duarte — Cafeteria Artesanal</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#"><svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" fill="#A96424"><path d="M441.33-241.33q-116.33 0-198.83-80.5Q160-402.33 160-518v-255.33q0-27.67 19.5-47.17t47.17-19.5H746q55.33 0 94.67 38.33Q880-763.33 880-708q0 59.33-38.33 103.67Q803.33-560 746-560h-23.33v42q0 115.67-82.5 196.17-82.5 80.5-198.84 80.5ZM226.67-626.67H656v-146.66H226.67v146.66ZM441.33-308q88.34 0 151.5-60.83Q656-429.67 656-518v-42H226.67v42q0 88.33 63.16 149.17Q353-308 441.33-308Zm281.34-318.67H746q30.33 0 48.83-24.83t18.5-56.5q0-27.67-19.83-46.5T746-773.33h-23.33v146.66ZM160-120v-66.67h640V-120H160Zm281.33-440Z"/></svg></a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="index.html">Página Inicial</a>
-         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="cardapio.html">Cardápio</a>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+        <svg xmlns="http://www.w3.org/2000/svg" height="36px" viewBox="0 -960 960 960" width="36px" fill="#C8924A">
+          <path d="M441.33-241.33q-116.33 0-198.83-80.5Q160-402.33 160-518v-255.33q0-27.67 19.5-47.17t47.17-19.5H746q55.33 0 94.67 38.33Q880-763.33 880-708q0 59.33-38.33 103.67Q803.33-560 746-560h-23.33v42q0 115.67-82.5 196.17-82.5 80.5-198.84 80.5ZM226.67-626.67H656v-146.66H226.67v146.66ZM441.33-308q88.34 0 151.5-60.83Q656-429.67 656-518v-42H226.67v42q0 88.33 63.16 149.17Q353-308 441.33-308Zm281.34-318.67H746q30.33 0 48.83-24.83t18.5-56.5q0-27.67-19.83-46.5T746-773.33h-23.33v146.66ZM160-120v-66.67h640V-120H160Zm281.33-440Z"/>
+        </svg>
+        <span class="brand-name">Grão Duarte</span>
+      </a>
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav gap-1">
+          <li class="nav-item">
+            <a class="nav-link nav-pill active" href="index.html">Início</a>
           </li>
           <li class="nav-item">
-           <a class="nav-link" href="endereco.html">Endereço</a>
-               </li>
-              </ul>
+            <a class="nav-link nav-pill" href="cardapio.html">Cardápio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-pill" href="endereco.html">Endereço</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero-section">
+    <div class="hero-overlay"></div>
+    <div class="container hero-content text-center">
+      <p class="hero-eyebrow">Cafeteria Artesanal desde 2010</p>
+      <h1 class="hero-title">Do Grão à <span class="accent">Xícara</span></h1>
+      <p class="hero-subtitle">Cultivamos, torramos e preparamos com dedicação — para que cada gole seja uma experiência única.</p>
+      <div class="d-flex gap-3 justify-content-center flex-wrap mt-4">
+        <a href="cardapio.html" class="btn btn-primary-custom">Ver Cardápio</a>
+        <a href="endereco.html" class="btn btn-outline-custom">Como Chegar</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CARROSSEL -->
+  <section class="py-5 section-dark">
+    <div class="container">
+      <div class="section-label mb-4">Nossa Galeria</div>
+      <div id="carouselExample" class="carousel slide carousel-fade rounded-custom overflow-hidden shadow-lg" data-bs-ride="carousel" data-bs-interval="4000">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="img/Capa.png" class="d-block w-100 carousel-img" alt="Café especial">
+            <div class="carousel-caption-custom">
+              <span>Cafés Especiais</span>
             </div>
-           </div>
-        </nav>
-
-     <!--Carrousel-->
-            <div id="carouselExample" class="carousel slide">
-     <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img src="img/Capa.png" height="481" height="450" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="img/Jarra de café.png" class="d-block w-100 carousel-img" alt="Jarra de café">
+            <div class="carousel-caption-custom">
+              <span>Preparo Artesanal</span>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="img/Maquina de cafe.png" class="d-block w-100 carousel-img" alt="Máquina de café">
+            <div class="carousel-caption-custom">
+              <span>Equipamentos de Precisão</span>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </button>
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="0" class="active"></button>
+          <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="1"></button>
+          <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="2"></button>
+        </div>
       </div>
-      <div class="carousel-item">
-        <img src="img/Jarra de café.png" height="481" height="450" class="d-block w-100" alt="...">
+    </div>
+  </section>
+
+  <!-- MENU CARDS -->
+  <section class="py-5 section-light">
+    <div class="container">
+      <div class="section-label">Nosso Menu</div>
+      <h2 class="section-title">Menu Principal</h2>
+      <div class="row g-4 mt-2">
+        <div class="col-md-4">
+          <div class="menu-card">
+            <div class="menu-card-img-wrap">
+              <img src="img/bebidas.png" alt="Bebidas" class="menu-card-img">
+              <div class="menu-card-overlay">
+                <a href="cardapio.html" class="btn btn-sm btn-outline-custom">Ver itens</a>
+              </div>
+            </div>
+            <div class="menu-card-body">
+              <h5>Bebidas</h5>
+              <p>Espressos, cappuccinos, lattes e muito mais — preparados na hora com grãos selecionados.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="menu-card featured">
+            <div class="menu-card-badge">Destaque do Mês</div>
+            <div class="menu-card-img-wrap">
+              <img src="img/combo.png" alt="Sugestão do mês" class="menu-card-img">
+              <div class="menu-card-overlay">
+                <a href="cardapio.html" class="btn btn-sm btn-outline-custom">Ver itens</a>
+              </div>
+            </div>
+            <div class="menu-card-body">
+              <h5>Sugestão do Mês</h5>
+              <p>Combinações especiais criadas pelo nosso barista para surpreender seu paladar.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="menu-card">
+            <div class="menu-card-img-wrap">
+              <img src="img/xicara verde.png" alt="Acompanhamentos" class="menu-card-img">
+              <div class="menu-card-overlay">
+                <a href="cardapio.html" class="btn btn-sm btn-outline-custom">Ver itens</a>
+              </div>
+            </div>
+            <div class="menu-card-body">
+              <h5>Acompanhamentos</h5>
+              <p>Doces e salgados artesanais para complementar o seu café com perfeição.</p>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="carousel-item">
-        <img src="img/Maquina de cafe.png" height="481" height="450" class="d-block w-100" alt="...">
+    </div>
+  </section>
+
+  <!-- CURIOSIDADE / SOBRE -->
+  <section class="py-5 section-dark">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-5 text-center">
+          <div class="img-frame">
+            <img src="img/grão.png" alt="Grãos de café" class="about-img">
+          </div>
+        </div>
+        <div class="col-lg-7">
+          <div class="section-label">Nossa História</div>
+          <h2 class="section-title">Da Semente à sua Xícara</h2>
+          <p class="about-text">
+            No Recanto Grão Duarte, nós mesmos cultivamos nossos grãos, acompanhando cada etapa com cuidado e dedicação. Desde o plantio até a colheita, tudo é feito com paixão, garantindo qualidade e origem em cada detalhe.
+          </p>
+          <p class="about-text">
+            Depois, seguimos com a torra no ponto ideal e o preparo artesanal, para que cada xícara entregue um sabor único, fresco e cheio de personalidade.
+          </p>
+          <div class="stats-row mt-4">
+            <div class="stat-item">
+              <span class="stat-num">15+</span>
+              <span class="stat-label">Anos de Café</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-num">100%</span>
+              <span class="stat-label">Origem Própria</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-num">8</span>
+              <span class="stat-label">Variedades de Grão</span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
-  </div>
+  </section>
 
-
-  
-
-  <!--card's-->
-  <div class="container">
-  <h1 class="T1">Menu Principal</h1>
-  <hr>
-  <div class="cards">
-    <div class="card" style="width: 18rem;">
-    <img src="img/bebidas.png" height="280px" class="card-img-top" alt="...">
-    <div class="card-body">
-      <p class="card-text">Bebidas</p>
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container text-center">
+      <svg xmlns="http://www.w3.org/2000/svg" height="32px" viewBox="0 -960 960 960" width="32px" fill="#C8924A" class="mb-2">
+        <path d="M441.33-241.33q-116.33 0-198.83-80.5Q160-402.33 160-518v-255.33q0-27.67 19.5-47.17t47.17-19.5H746q55.33 0 94.67 38.33Q880-763.33 880-708q0 59.33-38.33 103.67Q803.33-560 746-560h-23.33v42q0 115.67-82.5 196.17-82.5 80.5-198.84 80.5ZM226.67-626.67H656v-146.66H226.67v146.66ZM441.33-308q88.34 0 151.5-60.83Q656-429.67 656-518v-42H226.67v42q0 88.33 63.16 149.17Q353-308 441.33-308Zm281.34-318.67H746q30.33 0 48.83-24.83t18.5-56.5q0-27.67-19.83-46.5T746-773.33h-23.33v146.66ZM160-120v-66.67h640V-120H160Zm281.33-440Z"/>
+      </svg>
+      <p class="footer-brand">Recanto Grão Duarte</p>
+      <p class="footer-tagline">Cafeteria Artesanal · Cultivado com Amor</p>
+      <div class="footer-links mt-3">
+        <a href="index.html">Início</a>
+        <span>·</span>
+        <a href="cardapio.html">Cardápio</a>
+        <span>·</span>
+        <a href="endereco.html">Endereço</a>
+      </div>
+      <p class="footer-copy mt-4">© 2025 Recanto Grão Duarte. Todos os direitos reservados.</p>
     </div>
-  </div>
-  <div class="card" style="width: 18rem;">
-    <img src="img/combo.png" height="280px" class="card-img-top" alt="...">
-    <div class="card-body">
-      <p class="card-text">Sugestão do mês</p>
-    </div>
-  </div>
-  <div class="card" style="width: 18rem;">
-    <img src="img/xicara verde.png" height="280px" class="card-img-top" alt="...">
-    <div class="card-body">
-      <p class="card-text">Acompanhamento</p>
-    </div>
-  </div>
+  </footer>
 
-
- 
-
-  </div>
-   <!-- grid com duas colunas-->
-   <h1 class="T1"> Curiosidade do Recanto Grão Duarte </h1>
-   <hr>
-   
-   <div class="container text-center">
-     <div class="row">
-       <div class="col">
-         <img src="img/grão.png" height="350px" alt="">
-       </div>
-       <div class="col">
-        No Recanto Grão Duarte, nós mesmos cultivamos nossos grãos, acompanhando cada etapa com cuidado e dedicação. Desde o plantio até a colheita, tudo é feito com paixão, garantindo qualidade e origem em cada detalhe.
-
-        Depois, seguimos com a torra no ponto ideal e o preparo artesanal, para que cada xícara entregue um sabor único, fresco e cheio de personalidade.        
-</div> 
-   </div>
-
-    <!-- Link do javaScript do Bootstrap-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>"
-
-
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </body>
 </html>
