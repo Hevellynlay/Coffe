@@ -11,20 +11,20 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
 :root {
-      /* Paleta Monstro Burguer - Tema Marrom Rústico */
+      /* Paleta - Tema Marrom Rústico */
       --green-dark:  #2B1B17; /* Marrom Café Extra Forte (Fundo principal) */
       --green-mid:   #3D2B1F; /* Marrom Couro (Cards e Seções) */
       --green-light: #8B4513; /* Marrom Sela (Destaques e Hovers) */
       
-      --cream:       #EADDCA; /* Bege Amendoado (Texto principal) */
-      --cream-dark:  #C1A382; /* Bronze Suave (Texto secundário) */
+      --cream:       #ffffff; /* Bege Amendoado (Texto principal) */
+      --cream-dark:  #ffffff; /* Bronze Suave (Texto secundário) */
       
-      --gold:        #D2691E; /* Laranja Queimado/Canela (Preços e Chamadas) */
+      --gold:        #d39f7b; /* Laranja Queimado/Canela (Preços e Chamadas) */
       --gold-dark:   #5C4033; /* Marrom Escuro Profundo */
       
-      --white:       #FDF5E6; /* Branco "Old Lace" (Para não cansar a vista) */
-      --text-dark:   #261A15;
-      --text-muted:  #8E735B;
+      --white:       #ffffff; /* Branco "Old Lace" (Para não cansar a vista) */
+      --text-dark:   #fffefe;
+      --text-muted:  #ffffff;
       --bg-light:    #1E1412; /* Fundo geral quase preto-amarronzado */
       
       --radius:      10px;    /* Meio termo entre o rústico e o moderno */
@@ -589,12 +589,9 @@
   <!-- FILTER TABS -->
   <div class="filter-bar">
     <div class="filter-inner">
-      <button class="filter-tab active" onclick="scrollToSection('cafes')">☕ Cafés</button>
-      <button class="filter-tab" onclick="scrollToSection('bebidas-frias')">🧊 Bebidas Frias</button>
-      <button class="filter-tab" onclick="scrollToSection('chas')">🍵 Chás</button>
-      <button class="filter-tab" onclick="scrollToSection('doces')">🍰 Doces</button>
-      <button class="filter-tab" onclick="scrollToSection('salgados')">🥐 Salgados</button>
-      <button class="filter-tab" onclick="scrollToSection('combos')">⭐ Combos</button>
+      <button class="filter-tab active" onclick="scrollToSection('cafes')">Cafés</button>
+      <button class="filter-tab" onclick="scrollToSection('bebidas-frias')"> Bebidas Frias</button>
+      <button class="filter-tab" onclick="scrollToSection('combos')"> Combos</button>
     </div>
   </div>
 
@@ -612,7 +609,7 @@
 
       <div class="menu-item fade-in">
         <div class="menu-item-badge badge-popular">Popular</div>
-        <div class="menu-item-placeholder">☕</div>
+        <div class="menu-item-placeholder"><img src="img/_Coffee.jpg" style="margin-top: 50px" alt=""></div>
         <div class="menu-item-body">
           <div class="menu-item-name">Espresso Tradicional</div>
           <div class="menu-item-desc">Extração perfeita com grãos 100% cultivados na fazenda. Encorpado, intenso e aromático.</div>
@@ -627,7 +624,7 @@
 
       <div class="menu-item fade-in">
         <div class="menu-item-badge badge-destaque">Destaque</div>
-        <div class="menu-item-placeholder">☕</div>
+        <div class="menu-item-placeholder"><img src="img/download (2).jpg" style="margin-top: 100px"  height="580" alt=""></div>
         <div class="menu-item-body">
           <div class="menu-item-name">Cappuccino Artesanal</div>
           <div class="menu-item-desc">Espresso duplo com leite vaporizado cremoso e espuma aveludada. O clássico reimaginado.</div>
@@ -641,7 +638,7 @@
       </div>
 
       <div class="menu-item fade-in">
-        <div class="menu-item-placeholder">☕</div>
+        <div class="menu-item-placeholder"><img src="img/Coffee Kitty.jpg" height="580" style="margin-top: 30px" alt=""></div>
         <div class="menu-item-body">
           <div class="menu-item-name">Café Latte</div>
           <div class="menu-item-desc">Uma dose de espresso com bastante leite vaporizado. Suave, cremoso e reconfortante.</div>
@@ -656,7 +653,7 @@
 
       <div class="menu-item fade-in">
         <div class="menu-item-badge badge-novo">Novo</div>
-        <div class="menu-item-placeholder">☕</div>
+        <div class="menu-item-placeholder"><img src="img/download (3).jpg" style="margin-top: 150px;" height="650" alt=""></div>
         <div class="menu-item-body">
           <div class="menu-item-name">Flat White</div>
           <div class="menu-item-desc">Espresso duplo com microespuma de leite, mais intenso e encorpado que o latte.</div>
@@ -670,7 +667,7 @@
       </div>
 
       <div class="menu-item fade-in">
-        <div class="menu-item-placeholder">☕</div>
+        <div class="menu-item-placeholder"><img src="img/Recettes Gourmet.jpg" height="470px" style="margin-top: 150px"></div>
         <div class="menu-item-body">
           <div class="menu-item-name">Americano</div>
           <div class="menu-item-desc">Espresso alongado com água quente. Sabor suave e levemente encorpado, ideal para o dia a dia.</div>
@@ -685,7 +682,7 @@
 
       <div class="menu-item fade-in">
         <div class="menu-item-badge badge-destaque">Especial</div>
-        <div class="menu-item-placeholder">☕</div>
+        <div class="menu-item-placeholder"><img src="img/download (4).jpg" height="490" style="margin-top: 180px" alt=""></div>
         <div class="menu-item-body">
           <div class="menu-item-name">Mocha Duarte</div>
           <div class="menu-item-desc">Espresso com chocolate belga, leite vaporizado e chantilly. Nossa receita exclusiva.</div>
@@ -717,7 +714,7 @@
 
       <div class="menu-item fade-in">
         <div class="menu-item-badge badge-popular">Popular</div>
-        <div class="menu-item-placeholder">🧊</div>
+        <div class="menu-item-placeholder"><img src="img/How to Make Cold Brew Coffee at Home.jpg" height="400" style="margin-top: 180px"  alt=""></div>
         <div class="menu-item-body">
           <div class="menu-item-name">Cold Brew</div>
           <div class="menu-item-desc">Café extraído a frio por 12h. Sabor suave, naturalmente doce e com baixa acidez.</div>
@@ -732,7 +729,7 @@
 
       <div class="menu-item fade-in">
         <div class="menu-item-badge badge-novo">Novo</div>
-        <div class="menu-item-placeholder">🧊</div>
+        <div class="menu-item-placeholder"><img src="img/Brown Sugar Iced Latte with Cinnamon and Vanilla ____.jpg" height="500" style="margin-top: 200px"  alt=""></div>
         <div class="menu-item-body">
           <div class="menu-item-name">Iced Latte</div>
           <div class="menu-item-desc">Espresso sobre gelo com leite gelado. Refrescante e cremoso para os dias quentes.</div>
@@ -746,7 +743,7 @@
       </div>
 
       <div class="menu-item fade-in">
-        <div class="menu-item-placeholder">🧊</div>
+        <div class="menu-item-placeholder"><img src="img/Cappuccino sold caramel.jpg"  height="550" style="margin-top: 280px" alt=""></div>
         <div class="menu-item-body">
           <div class="menu-item-name">Frappuccino Caramelo</div>
           <div class="menu-item-desc">Café gelado batido com leite, calda de caramelo e chantilly generoso por cima.</div>
@@ -760,7 +757,7 @@
       </div>
 
       <div class="menu-item fade-in">
-        <div class="menu-item-placeholder">🧊</div>
+        <div class="menu-item-placeholder"><img src="img/Espresso Tonic.jpg" height="500" style="margin-top: 100px"alt=""></div>
         <div class="menu-item-body">
           <div class="menu-item-name">Limonada com Espresso</div>
           <div class="menu-item-desc">Espresso gelado com limonada artesanal. Azedo, intenso e surpreendentemente harmonioso.</div>
@@ -777,150 +774,7 @@
   </section>
 
   <hr style="border:none; border-top: 1px solid rgba(30,57,50,0.08); margin: 0 24px;">
-
-  <!-- ====== CHÁS ====== -->
-  <section id="chas" class="menu-section">
-    <div class="menu-section-header">
-      <div>
-        <div class="menu-section-eyebrow">Infusões Especiais</div>
-        <h2 class="menu-section-title">Chás</h2>
-      </div>
-      <span class="menu-section-count">3 opções</span>
-    </div>
-
-    <div class="menu-list">
-      <div class="menu-list-item">
-        <div class="list-item-icon">🍵</div>
-        <div class="list-item-info">
-          <div class="list-item-name">Chá Verde Matcha</div>
-          <div class="list-item-desc">Matcha japonês de alta qualidade preparado com técnica tradicional</div>
-        </div>
-        <div class="list-item-price">R$ 12,00</div>
-      </div>
-      <div class="menu-list-item">
-        <div class="list-item-icon">🍵</div>
-        <div class="list-item-info">
-          <div class="list-item-name">Chá Chai Latte</div>
-          <div class="list-item-desc">Blend de especiarias com leite vaporizado. Canela, cardamomo e gengibre</div>
-        </div>
-        <div class="list-item-price">R$ 13,00</div>
-      </div>
-      <div class="menu-list-item">
-        <div class="list-item-icon">🍵</div>
-        <div class="list-item-info">
-          <div class="list-item-name">Chá de Ervas da Casa</div>
-          <div class="list-item-desc">Blend exclusivo com camomila, hortelã e erva-cidreira colhidas fresquinhas</div>
-        </div>
-        <div class="list-item-price">R$ 9,00</div>
-      </div>
-    </div>
-  </section>
-
-  <hr style="border:none; border-top: 1px solid rgba(30,57,50,0.08); margin: 0 24px;">
-
-  <!-- ====== DOCES ====== -->
-  <section id="doces" class="menu-section">
-    <div class="menu-section-header">
-      <div>
-        <div class="menu-section-eyebrow">Feitos na casa</div>
-        <h2 class="menu-section-title">Doces</h2>
-      </div>
-      <span class="menu-section-count">5 opções</span>
-    </div>
-
-    <div class="menu-list">
-      <div class="menu-list-item">
-        <div class="list-item-icon">🍰</div>
-        <div class="list-item-info">
-          <div class="list-item-name">Bolo de Cenoura com Ganache</div>
-          <div class="list-item-desc">Receita da vovó com cobertura de chocolate meio amargo</div>
-        </div>
-        <div class="list-item-price">R$ 11,00</div>
-      </div>
-      <div class="menu-list-item">
-        <div class="list-item-icon">🍫</div>
-        <div class="list-item-info">
-          <div class="list-item-name">Brownie Fudge</div>
-          <div class="list-item-desc">Denso, úmido e com gotas de chocolate. Servido morno</div>
-        </div>
-        <div class="list-item-price">R$ 10,00</div>
-      </div>
-      <div class="menu-list-item">
-        <div class="list-item-icon">🥐</div>
-        <div class="list-item-info">
-          <div class="list-item-name">Croissant de Manteiga</div>
-          <div class="list-item-desc">Folhado artesanal com manteiga francesa. Crocante por fora, macio por dentro</div>
-        </div>
-        <div class="list-item-price">R$ 9,00</div>
-      </div>
-      <div class="menu-list-item">
-        <div class="list-item-icon">🍮</div>
-        <div class="list-item-info">
-          <div class="list-item-name">Cheesecake de Frutas Vermelhas</div>
-          <div class="list-item-desc">Base crocante de biscoito, creme suave e calda de morango e framboesa</div>
-        </div>
-        <div class="list-item-price">R$ 14,00</div>
-      </div>
-      <div class="menu-list-item">
-        <div class="list-item-icon">🍪</div>
-        <div class="list-item-info">
-          <div class="list-item-name">Cookie de Chocolate Artesanal</div>
-          <div class="list-item-desc">Macio no centro, crocante nas bordas. Com gotas de chocolate belga</div>
-        </div>
-        <div class="list-item-price">R$ 7,00</div>
-      </div>
-    </div>
-  </section>
-
-  <hr style="border:none; border-top: 1px solid rgba(30,57,50,0.08); margin: 0 24px;">
-
-  <!-- ====== SALGADOS ====== -->
-  <section id="salgados" class="menu-section">
-    <div class="menu-section-header">
-      <div>
-        <div class="menu-section-eyebrow">Para Qualquer Hora</div>
-        <h2 class="menu-section-title">Salgados</h2>
-      </div>
-      <span class="menu-section-count">4 opções</span>
-    </div>
-
-    <div class="menu-list">
-      <div class="menu-list-item">
-        <div class="list-item-icon">🥪</div>
-        <div class="list-item-info">
-          <div class="list-item-name">Sanduíche Caprese</div>
-          <div class="list-item-desc">Pão ciabatta, muçarela de búfala, tomate, manjericão e azeite extravirgem</div>
-        </div>
-        <div class="list-item-price">R$ 18,00</div>
-      </div>
-      <div class="menu-list-item">
-        <div class="list-item-icon">🥐</div>
-        <div class="list-item-info">
-          <div class="list-item-name">Croissant de Presunto e Queijo</div>
-          <div class="list-item-desc">Croissant folhado recheado com presunto cozido e queijo prato gruyère</div>
-        </div>
-        <div class="list-item-price">R$ 13,00</div>
-      </div>
-      <div class="menu-list-item">
-        <div class="list-item-icon">🧀</div>
-        <div class="list-item-info">
-          <div class="list-item-name">Pão de Queijo Artesanal</div>
-          <div class="list-item-desc">Feito com queijo canastra. Crocante por fora e derretendo por dentro</div>
-        </div>
-        <div class="list-item-price">R$ 6,00</div>
-      </div>
-      <div class="menu-list-item">
-        <div class="list-item-icon">🥚</div>
-        <div class="list-item-info">
-          <div class="list-item-name">Torta Integral de Frango</div>
-          <div class="list-item-desc">Massa integral, recheio cremoso de frango com catupiry e tomate seco</div>
-        </div>
-        <div class="list-item-price">R$ 12,00</div>
-      </div>
-    </div>
-  </section>
-
-  <hr style="border:none; border-top: 1px solid rgba(30,57,50,0.08); margin: 0 24px;">
+ 
 
   <!-- ====== COMBOS ====== -->
   <section id="combos" class="menu-section">
@@ -936,7 +790,7 @@
 
       <div class="menu-item fade-in">
         <div class="menu-item-badge badge-destaque">Mais Pedido</div>
-        <div class="menu-item-placeholder">⭐</div>
+        <div class="menu-item-placeholder"><img src="img/download (5).jpg" height="400" style="margin-top: 150px"alt=""></div>
         <div class="menu-item-body">
           <div class="menu-item-name">Combo Manhã</div>
           <div class="menu-item-desc">Café latte + croissant de manteiga + pão de queijo. O começo de dia perfeito.</div>
@@ -950,7 +804,7 @@
       </div>
 
       <div class="menu-item fade-in">
-        <div class="menu-item-placeholder">⭐</div>
+        <div class="menu-item-placeholder"><img src="img/Cake.jpg" height="535" style="margin-top: 150px" alt=""></div>
         <div class="menu-item-body">
           <div class="menu-item-name">Combo Tarde</div>
           <div class="menu-item-desc">Cappuccino artesanal + fatia de bolo + cookie artesanal. Pausa perfeita.</div>
@@ -965,7 +819,7 @@
 
       <div class="menu-item fade-in">
         <div class="menu-item-badge badge-novo">Novo</div>
-        <div class="menu-item-placeholder">⭐</div>
+        <div class="menu-item-placeholder"><img src="img/download (6).jpg" height="670" style="margin-top: 150px" alt=""></div>
         <div class="menu-item-body">
           <div class="menu-item-name">Combo Duarte</div>
           <div class="menu-item-desc">Cold brew + sanduíche caprese + brownie. Nossa combinação exclusiva do mês.</div>
